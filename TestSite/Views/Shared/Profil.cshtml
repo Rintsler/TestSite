@@ -1,0 +1,31 @@
+﻿@model TestSite.Models.UserAcc
+
+@{
+    ViewBag.Title = "Данные профиля";
+}
+
+@if (User.Identity.IsAuthenticated)
+{
+<div>
+    <label style="color:black">Название компании</label><br />
+    <label>@User.Identity.Name</label><br /><br />
+
+    <label style="color:black">Сфера деятельности</label><br />
+    <span>@Model.sferaD</span><br /><br />
+
+    <label style="color:black">Инвистиционный фонд</label><br />
+    <span>@Model.fondInv</span><br /><br />
+
+    <label style="color:black">Инвистиционный фонд BTC</label><br />
+    <span>@ViewBag.str</span><br /><br />
+
+    <label style="color:black">Взаимодействие с БТС</label><br />
+    @if (Model.BTCJob == true)
+    {<span>Да</span><br /><br />}
+    else
+    { <span>Нет</span><br /><br />}
+</div>
+    <form method="post" asp-controller="Account" asp-action="Logout" >
+        <input type="submit" value="Выход" class="buttonReg"/>
+    </form>
+}
