@@ -1,0 +1,43 @@
+﻿@model TestSite.ViewModels.RegisterViewModel
+<h2>Регистрация новой компании</h2>
+<form method="post" asp-controller="Account" asp-action="Register">
+    <div asp-validation-summary="ModelOnly"></div>
+    <div>
+        <label asp-for="Email"></label><br />
+        <input asp-for="Email" />
+        <span asp-validation-for="Email"></span>
+    </div>
+    <div>
+        <label asp-for="CompName"></label><br />
+        <input asp-for="CompName" />
+        <span asp-validation-for="CompName"></span>
+    </div>
+    <div>
+        <label asp-for="sferaD"></label><br />
+        <input asp-for="sferaD" />
+        <span asp-validation-for="sferaD"></span>
+    </div>
+    <div>
+        <label asp-for="BTCJob"></label>
+        <input type="checkbox" asp-for="BTCJob" name="BTCJob">
+        <span asp-validation-for="BTCJob"></span>
+    </div>
+    <div>
+        <label asp-for="fondInv"></label><br />
+        <input asp-for="fondInv" />
+        <span asp-validation-for="fondInv"></span>
+    </div>
+    <div>
+        <label asp-for="Password"></label><br />
+        <input asp-for="Password" />
+        <span asp-validation-for="Password"></span>
+    </div>
+    <div>
+        <label asp-for="PasswordConfirm"></label><br />
+        <input asp-for="PasswordConfirm" />
+        <span asp-validation-for="PasswordConfirm"></span>
+    </div>
+    <div>
+        <input type="submit" value="Регистрация" class="buttonReg"/>
+    </div>
+</form>
