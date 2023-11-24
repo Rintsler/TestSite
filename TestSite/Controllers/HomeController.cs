@@ -26,13 +26,14 @@ namespace TestSite.Controllers
             var response = client.Get(request);
 
             var root = JsonConvert.DeserializeObject<Root>(response.Content);
-            
+
             if (usr != null)
             {
                 var fondInv = usr.fondInv;
-                var valueInDataBase = Convert.ToInt32(fondInv);
-                var btc = valueInDataBase / root.Rates.Rub.Rate;
-                ViewBag.str = new string($"На дату: {root.Time.RateTime:G} - {valueInDataBase} руб = {btc} btc");
+            var valueInDataBase = Convert.ToInt32(fondInv);
+            var btc = valueInDataBase / root.Rates.Rub.Rate;
+
+            ViewBag.str = new string($"На дату: {root.Time.RateTime:G} - {valueInDataBase} руб = {btc} btc");
             }
             
             return View(usr);
